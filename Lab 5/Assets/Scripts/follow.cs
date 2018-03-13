@@ -16,13 +16,15 @@ public class follow : MonoBehaviour
 	public GameObject player;
 	public Transform  capsule;
 	public Transform cube;
+	public bool radBool;
+	public HP playerHP;
 
 	// Use this for initialization
 	void Start () 
 	{
-		
+		radBool = false;
 	}
-	
+
 	// Update is called once per frame
 	void Update () 
 	{
@@ -30,14 +32,25 @@ public class follow : MonoBehaviour
 		Vector3 localPosition = player.transform.position - transform.position;
 		localPosition = localPosition.normalized;
 
-		if (distance < 5)
+		inRadius (distance, radBool);
+		if (inRadius (distance, radBool))
 		{
-			cube.LookAt (capsule);
-			transform.Translate (localPosition.x * speed * Time.deltaTime, 
-				0.0f,
-				localPosition.z * speed * Time.deltaTime);
+			followPlayer (localPosition);
+			playerHP.hpDecrease ();
 		}
+	}
 
+	public bool inRadius (float distance, bool radBool) {
+		if (distance < 5) {
+			return true;
+		} else {
+			return false; 
+		}
+	}
 
+	public void followPlayer (Vector3 localPosition) {
+		cube.LookAt (capsule);
+		transform.Translate (localPosition.x * speed * Time.deltaTime, 
+			0.0f, localPosition.z * speed * Time.deltaTime);
 	}
 }
