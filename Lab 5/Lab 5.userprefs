@@ -1,12 +1,8 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Player.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Player.cs">
     <Files>
-      <File FileName="Assets/Scripts/Player.cs" Line="23" Column="3" />
-      <File FileName="Assets/Scripts/inRadius.cs" Line="28" Column="1" />
-      <File FileName="Assets/Scripts/HP.cs" Line="15" Column="2" />
-      <File FileName="Assets/Scripts/follow.cs" Line="53" Column="1" />
-      <File FileName="Assets/Scripts/runaway.cs" Line="36" Column="1" />
+      <File FileName="Assets\Scripts\Player.cs" Line="57" Column="47" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

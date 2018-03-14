@@ -25,26 +25,20 @@ public class Player : MonoBehaviour {
 	}
 
 	void Update () {
-
-		float distance = Vector3.Distance(player.transform.position, transform.position);
-		Vector3 localPosition = player.transform.position - transform.position;
-		localPosition = localPosition.normalized;
+		cube.LookAt (player);
 
 		if (enter == true) {
 			switch (cubeAction) {
 
 			case CAction.None:
-				cube.LookAt (player);
 				print("none");
 				break;
 			case CAction.Follow:
-				cube.LookAt (player);
-				follow (localPosition);
+				follow ();
 				print("follow");
 				break;
 			case CAction.Flee:
-				cube.LookAt (player);
-				flee (localPosition);
+				flee ();
 				print("flee");
 				break;
 			}
@@ -55,15 +49,12 @@ public class Player : MonoBehaviour {
 		}
 	}
 			
-	public void follow (Vector3 localPosition) {
-		cube.Translate (localPosition.x * speed * Time.deltaTime, 
-			0.0f, localPosition.z * speed * Time.deltaTime);
+	public void follow () {
+		cube.Translate(0f, 0f, 1f * speed * Time.deltaTime);
 	}
 
-	public void flee (Vector3 localPosition){
-		cube.Translate (localPosition.x * speed * Time.deltaTime * -1, 
-			0.0f,
-			localPosition.z * speed * Time.deltaTime * -1);
+	public void flee (){
+		cube.Translate(0f, 0f, -1f * speed * Time.deltaTime);
 	}
 		
 	public void hpDecrease(){
