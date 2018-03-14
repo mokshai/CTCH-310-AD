@@ -1,17 +1,23 @@
-﻿using System.Collections;
+﻿/* Keenan Myers
+ * March 13 2018
+ * CTCH 310 AD
+ * 
+ * Player.cs
+ * Currently only decreases slider value in a trigger
+ * or increases out of trigger.
+ */
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class Player : MonoBehaviour {
 
-	public enum CAction {None, Follow, Flee};
-	public CAction cubeAction;
-
 	public Transform player;
-	public Transform cube;
+	public float decreaseAmount;
+	public float increaseAmount;
 	public Slider slider;
-	public float speed;
 	bool enter;
 
 	private void OnTriggerEnter(Collider other)
@@ -25,44 +31,20 @@ public class Player : MonoBehaviour {
 	}
 
 	void Update () {
-		cube.LookAt (player);
 
 		if (enter == true) {
-			switch (cubeAction) {
-
-			case CAction.None:
-				print("none");
-				break;
-			case CAction.Follow:
-				follow ();
-				print("follow");
-				break;
-			case CAction.Flee:
-				flee ();
-				print("flee");
-				break;
-			}
-
 			hpDecrease ();
 		} else {
 			hpIncrease ();
 		}
 	}
-			
-	public void follow () {
-		cube.Translate(0f, 0f, 1f * speed * Time.deltaTime);
-	}
 
-	public void flee (){
-		cube.Translate(0f, 0f, -1f * speed * Time.deltaTime);
-	}
-		
 	public void hpDecrease(){
-		slider.value--;
+		slider.value -= decreaseAmount*Time.deltaTime;
 	}
 
 	public void hpIncrease(){
-		slider.value++;
+		slider.value += increaseAmount*Time.deltaTime;
 	}
 
 }
