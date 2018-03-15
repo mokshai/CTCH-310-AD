@@ -56,6 +56,7 @@
      <Compile Include="Assets\Scripts\CamMovement\Movement.cs" />
      <Compile Include="Assets\Scripts\CubeAI.cs" />
      <Compile Include="Assets\Scripts\Player.cs" />
+     <Compile Include="Assets\TerrainToolkit\heparo\terrain\toolkit\scripts\TerrainToolkit.cs" />
  <Reference Include="Vuforia.UnityExtensions.Editor">
  <HintPath>D:/Program Files/Unity/Editor/Data/PlaybackEngines/VuforiaSupport/Managed/Editor/Vuforia.UnityExtensions.Editor.dll</HintPath>
  </Reference>
@@ -167,6 +168,10 @@
  <Reference Include="UnityEngine.StandardEvents">
  <HintPath>C:/Users/Mokshai/AppData/LocalLow/Unity/cache/packages/packages.unity.com/com.unity.standardevents@1.0.10/UnityEngine.StandardEvents.dll</HintPath>
  </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="Assembly-CSharp-firstpass.csproj">
+      <Project>{60CFFBC7-7507-5FB9-8CEE-7D35AEE14C96}</Project>      <Name>Assembly-CSharp-firstpass</Name>    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
