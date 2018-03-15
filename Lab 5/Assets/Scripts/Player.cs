@@ -15,9 +15,17 @@ using UnityEngine.UI;
 public class Player : MonoBehaviour {
 
 	public Transform player;
-	public float decreaseAmount;
-	public float increaseAmount;
-	public Slider slider;
+	public float hpDecrease;
+	public float hpIncrease;
+	public float oxygenDecrease;
+	public float oxygenIncrease;
+	public float stamDecrease;
+	public float stamIncrease;
+	public Slider hpslider;
+	public Slider stamslider;
+	public Slider oxslider;
+
+
 	bool enter;
 
 	private void OnTriggerEnter(Collider other)
@@ -33,18 +41,20 @@ public class Player : MonoBehaviour {
 	void Update () {
 
 		if (enter == true) {
-			hpDecrease ();
+			decrease (hpslider, hpDecrease);
 		} else {
-			hpIncrease ();
+			increase (hpslider, hpIncrease);
 		}
 	}
 
-	public void hpDecrease(){
-		slider.value -= decreaseAmount*Time.deltaTime;
+	public void decrease(Slider slider, float amount){
+		slider.value -= amount*Time.deltaTime;
 	}
 
-	public void hpIncrease(){
-		slider.value += increaseAmount*Time.deltaTime;
+	public void increase(Slider slider, float amount){
+		slider.value += amount*Time.deltaTime;
 	}
+
+
 
 }

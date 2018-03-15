@@ -53,9 +53,9 @@
   <ItemGroup>
      <Compile Include="Assets\Scripts\CamMovement\camMouseLook.cs" />
      <Compile Include="Assets\Scripts\CamMovement\characterController.cs" />
-     <Compile Include="Assets\Scripts\CamMovement\Movement.cs" />
      <Compile Include="Assets\Scripts\CubeAI.cs" />
      <Compile Include="Assets\Scripts\Player.cs" />
+     <Compile Include="Assets\Scripts\Underwater.cs" />
      <Compile Include="Assets\TerrainToolkit\heparo\terrain\toolkit\scripts\TerrainToolkit.cs" />
  <Reference Include="Vuforia.UnityExtensions.Editor">
  <HintPath>D:/Program Files/Unity/Editor/Data/PlaybackEngines/VuforiaSupport/Managed/Editor/Vuforia.UnityExtensions.Editor.dll</HintPath>

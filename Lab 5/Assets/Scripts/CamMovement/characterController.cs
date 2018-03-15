@@ -4,17 +4,37 @@ using UnityEngine;
 
 public class characterController : MonoBehaviour {
 
-    public float speed;
+    public float walkSpeed;
+	public float runSpeed;
+	private float speed;
+	public GameObject playerObject;
+	private Player player;
 
 	// Use this for initialization
 	void Start () {
         Cursor.lockState = CursorLockMode.Locked;
+		player = playerObject.GetComponent<Player> ();
 	}
 	
 	// Update is called once per frame
 	void Update () {
 		float translation;
 		float strafe;
+
+		speed = walkSpeed;
+
+		if (Input.GetKey ("left shift")) {
+			speed = runSpeed;
+			player.decrease (player.stamslider, player.stamDecrease);
+			if (player.stamslider.value == 0) {
+				speed = walkSpeed;
+			}
+				
+		} else {
+			player.increase (player.stamslider, player.stamIncrease);
+		}
+
+
 
 		if (((Input.GetAxis("Vertical")) != 0) && (Input.GetAxis("Horizontal") != 0))
 			{
