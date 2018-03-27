@@ -8,6 +8,7 @@ public class Shoosting : MonoBehaviour {
 	public GameObject bulletPrefab;
 	public Transform player;
 	public float bulletSpeed;
+	public float killTime;
 
 	private AudioSource source;
 	private float volumeLowRange = 0.5f;
@@ -29,10 +30,9 @@ public class Shoosting : MonoBehaviour {
 		float volume = Random.Range (volumeLowRange, volumeHighRange);
 		source.PlayOneShot (bulletAudio, volume);
 
-		GameObject bullet;
-		bullet = Instantiate (bulletPrefab, player.position, player.rotation);
+		GameObject bullet = Instantiate (bulletPrefab, player.position, player.rotation);
 		bullet.GetComponent<Rigidbody>().velocity = bullet.transform.forward * bulletSpeed;
-		Destroy (bullet, 2.0f);
+		Destroy (bullet, killTime);
 	}
 
 }
