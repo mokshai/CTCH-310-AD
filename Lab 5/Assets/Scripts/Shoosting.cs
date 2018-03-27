@@ -31,7 +31,8 @@ public class Shoosting : MonoBehaviour {
 
 		GameObject bullet;
 		bullet = Instantiate (bulletPrefab, player.position, player.rotation);
-		bullet.GetComponent<Rigidbody>().velocity = bullet.transform.TransformDirection(Vector3.forward * bulletSpeed);
+		bullet.GetComponent<Rigidbody>().velocity = bullet.transform.forward * bulletSpeed;
+		Destroy (bullet, 2.0f);
 	}
 
 }
