@@ -14,6 +14,8 @@ public class camMouseLook : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         player = this.transform.parent.gameObject;
+		Cursor.lockState = CursorLockMode.Locked;
+		Cursor.visible = false;
 	}
 	
 	// Update is called once per frame

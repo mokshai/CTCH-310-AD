@@ -22,7 +22,7 @@ public class characterController : MonoBehaviour {
 		float strafe;
 
 		speed = walkSpeed;
-
+		/*
 		if (Input.GetKey ("left shift")) {
 			speed = runSpeed;
 			player.decrease (player.stamslider, player.stamDecrease);
@@ -34,7 +34,7 @@ public class characterController : MonoBehaviour {
 			player.increase (player.stamslider, player.stamIncrease);
 		}
 
-
+		*/
 
 		if (((Input.GetAxis("Vertical")) != 0) && (Input.GetAxis("Horizontal") != 0))
 			{

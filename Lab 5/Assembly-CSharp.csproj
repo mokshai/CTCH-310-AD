@@ -56,6 +56,7 @@
      <Compile Include="Assets\Scripts\CamMovement\characterController.cs" />
      <Compile Include="Assets\Scripts\CubeAI.cs" />
      <Compile Include="Assets\Scripts\Player.cs" />
+     <Compile Include="Assets\Scripts\Shoosting.cs" />
      <Compile Include="Assets\Scripts\TextChange.cs" />
      <Compile Include="Assets\Scripts\Underwater.cs" />
      <Compile Include="Assets\TerrainToolkit\heparo\terrain\toolkit\scripts\TerrainToolkit.cs" />
